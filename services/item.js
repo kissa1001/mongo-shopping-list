@@ -21,7 +21,7 @@ exports.list = function(callback, errback) {
 };
 
 exports.remove = function(objId, callback, errback) {
-    Item.findOneAndRemove({ _id: objId }, function(err, item) {
+    Item.remove({ _id: objId }, function(err, item) {
         if (err) {
             errback(err);
             return;
@@ -31,8 +31,8 @@ exports.remove = function(objId, callback, errback) {
     });
 };
 
-exports.edit = function(objId, name, callback, errback) {
-    Item.findOneAndUpdate({ _id: objId }, { name: name }, function(err, item) {
+exports.update = function(objId, name, callback, errback) {
+    Item.update({ _id: objId }, { name: name }, function(err, item) {
         if (err) {
             errback(err);
             return;

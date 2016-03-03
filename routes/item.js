@@ -31,7 +31,7 @@ router.delete('/items/:name', function(req, res) {
 router.put('/items/:name', function(req, res) {
    var objId = req.params.name;
    
-   Item.edit(objId, req.body.name, function(item) {
+   Item.update(objId, req.body.name, function(item) {
        res.status(200).json(item);
    }, function(err) {
        res.status(400).json(err);
